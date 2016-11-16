@@ -38,4 +38,6 @@ RUN cd / \
 # install "virtualenv", since the vast majority of users of this image will want it
 RUN pip install --no-cache-dir virtualenv
 
+WORKDIR  /root
+
 CMD ["/bin/bash"]
