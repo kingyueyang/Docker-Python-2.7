@@ -1,4 +1,5 @@
 FROM centos:6.6
+MAINTAINER Yang Yue
 
 ENV PATH /opt/Python-2.7.12/bin:$PATH
 ENV LANG en_US.UTF-8
