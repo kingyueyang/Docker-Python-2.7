@@ -1,22 +1,22 @@
 FROM centos:6.6
 MAINTAINER Yang Yue
 
-ENV PATH /opt/Python-2.7.12/bin:$PATH
+ENV PATH /opt/Python-2.7.8/bin:$PATH
 ENV LANG en_US.UTF-8
-ENV PYTHON_VERSION 2.7.12
+ENV PYTHON_VERSION 2.7.8
 ENV PYTHON_PIP_VERSION 9.0.1
 
 # runtime dependencies
 RUN yum install -y gcc wget xz tar zlib zlib-devel openssl-devel.x86_64 \
 	&& cd / \
-	&& wget https://www.python.org/ftp/python/2.7.12/Python-2.7.12.tar.xz \
-	&& xz -kvd Python-2.7.12.tar.xz \
-	&& tar xvf Python-2.7.12.tar \
-	&& cd Python-2.7.12 \
-	&& ./configure  --prefix=/opt/Python-2.7.12 \
+	&& wget https://www.python.org/ftp/python/2.7.8/Python-2.7.8.tar.xz \
+	&& xz -kvd Python-2.7.8.tar.xz \
+	&& tar xvf Python-2.7.8.tar \
+	&& cd Python-2.7.8 \
+	&& ./configure  --prefix=/opt/Python-2.7.8 \
 	&& make -j2 \
 	&& make install \
-	&& rm -rf /Python-2.7.12
+	&& rm -rf /Python-2.7.8
 
 RUN cd / \
 	&& wget https://pypi.python.org/packages/25/4e/1b16cfe90856235a13872a6641278c862e4143887d11a12ac4905081197f/setuptools-28.8.0.tar.gz \
